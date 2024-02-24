@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 from docx import Document
 import time
 
-Chap_No = list(range(1, 5))
-base_url = ["https://dulcet-scone-301d4e.netlify.app/chapter_"]
+Chap_No = list(range(1, 2))
+base_url = []
 doc = Document()
 counter = 0
 
@@ -13,7 +13,7 @@ for i in Chap_No:
     counter += 1
     time.sleep(5)
     base_url.append(f"https://dulcet-scone-301d4e.netlify.app/chapter_{i}")
-    response = requests.get(base_url[0])
+    response = requests.get(base_url[-1])
 
     # if response.status_code == 200:
     soup = BeautifulSoup(response.text, "html.parser")
